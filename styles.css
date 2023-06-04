@@ -1,0 +1,149 @@
+@media print {
+    @page {
+      size: auto; /* Set the page size as auto or specify the desired size */
+      margin: 0; /* Remove the default margins */
+    }
+    body {
+      margin: 0;
+    }
+    /* .Input_container, #myButton{
+      display: none;
+    } */
+  }
+  .Input_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      border-bottom: 3px solid red;
+      margin: 2px;
+      border-radius: 8px;
+      height:min-content;
+      margin-bottom: 3px;
+  
+  }
+  .address{
+    margin-left: 25px;
+  }
+  main{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  @media print {
+      .Input_container, #myButton {
+        display: none;
+      }
+    }
+  .inputs_div{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid green;
+      padding: 3px;
+      margin: 6px;
+      border-radius: 10px;
+      background: rgba(255, 253, 253, 0.692);
+  }
+  input{
+      padding: 6px;
+      margin: 6px;
+      border: 2px solid gainsboro;
+      border-radius: 6px;
+  }
+  #gender, #designation, #old_station, #new_station{
+      padding: 6px;
+      margin: 4px;
+      border: 2px solid gainsboro;
+      border-radius: 6px;
+  }
+  .print_section{
+    width: 100%;
+  }
+  .application_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      /* border: 1px solid green; */
+      border-radius: 6px;
+      margin: 0px 4px 4px 2px;
+      width: auto;
+      padding: 0px 30px 2px 30px;
+      
+      
+  }
+  .application_note{
+    margin-left: 21%;
+  }
+  
+  table {
+      border-collapse: collapse;
+      border: 2px solid black;
+      border-radius: 50px;
+      margin: 6px;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;  
+    }
+    .noteMaindiv{
+      display: flex;
+      width: auto;
+      /* border: 1px solid red; */
+    }
+    .note_stamp{
+      display: flex;
+    }
+    .Endst_stamp{
+      display: flex;
+    }
+    .Endst{
+      width: auto;
+      /* border: 1px solid blue; */
+    }
+    .Stamp{
+      display: flex;
+      align-self: end;
+      width: 300px;
+      margin-left: auto;
+      width: 50%;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 30px;
+    }
+    .Stamp{
+  width: fit-content;
+      /* border: 1px solid rebeccapurple; */
+    }
+    .dic{
+      width: 100%;
+    }
+  
+  .application_header{
+    padding: 2px;
+    margin: 15px 5px 5px 30px ;
+    display: flex;
+  }
+  .DistrictText{
+    margin-left: 10px;
+    text-align: center;
+  }
+  #ph{
+    display: none;
+  }
+  .imageLogo{
+    width: 100px;
+    margin-right: 50px;
+    height: 100px;
+    /* margin: 10px 25px 5px 0px; */
+  }
+  #submitButton, #myButton {
+    background-color: rgb(121, 235, 121);
+    color: white;
+    font-size: medium;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  

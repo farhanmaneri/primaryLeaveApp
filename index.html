@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leave Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <main>
+<div class="Input_container">
+  <h1>Leave Sancion  Form</h1>
+  <div class="inputs_div"> 
+  <form id="myForm">
+    <!-- Gender -->
+    <label for="gender">Gender</label>
+    <select id="gender" name="title" form="Mr_Ms">
+      <option value="Ms.">Ms.</option>
+      <option value="Mr.">Mr.</option>
+     </select>           
+        <label for="name">Name:</label>
+        <input type="text" id="name" required name="name">
+        <!-- Designation -->
+        <label for="designation">Designation:</label>
+        <select id="designation" name="designation"  form="Mr_Ms">
+       <option value="PST">PST</option>      
+      <option value="PSHT">PSHT</option>
+      <option value="SPST">SPST</option>
+    </select><br>
+   
+  
+   
+    <label for="school">School/Station Name:</label>
+    
+    <!-- New Station selection -->
+    <select id="school" name="school"  form="school">
+      <option value="GGPS">GGPS</option>      
+      <option value="GGCMS">GGCMS</option>      
+      <option value="GGHS">GGHS</option>
+      <option value="GGHSS">GGHSS</option>
+      <option value="GGCMHS">GGCMHS</option>      
+    </select>
+    <!-- New Station selection input field -->    
+    <input type="text" id="schoolInput" required name="schoolInput"><br/>
+    <!-- leave from date  -->
+    <label for="LeavePeriod">Leave From:</label>
+    <input type="date" id="dateFrom" required name="dateFrom">
+    <!-- leave upto date  -->
+    
+    <label for="LeavePeriod">Leave Upto:</label>
+    <input type="date" id="dateUpto" required name="dateUpto"> <br>
+
+    
+    <!-- Nature of leave Lable -->
+      <label for="leaveNature">Nature of Leave:</label>
+      <!-- Nature of leave  -->
+          <select id="leaveNature" name="leaveNature"  form="leaveNature">
+            <option value="Maternity Leave (Pre-Natal)">Maternity (Pre-Natal)</option>
+            <option value="Maternity Leave (Post-Natal)">Maternity (Post-Natal)</option>
+            <option value="Earned Leave">Earned Leave</option>      
+            <option value="Marriage Leave">Marriage Leave</option>      
+            <option value="Madical Leave">Medical Leave</option>      
+          </select>
+          
+    <!-- Remarks -->
+    <label for="service_book">Service Book Attached:</label>
+    <select id="service_book" name="service_book"  form="leaveNature">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+    
+    <br/>
+    <!-- submit Button -->
+    <input type="submit" id="submitButton"  value="Submit">
+  </form>
+</div>
+</div>
+<div class="print_section" id="print_section">
+  <div class="application_header">
+   <div>
+    <image class="imageLogo" src="./public/logo.png"/>
+  </div>
+    <div class="DistrictText"> 
+      
+      <h3><u>DISTRICT EDUCATION OFFICE (FEMALE) SWABI</u></h3>
+      <p>(Office phone Fax No 0938280339, emisfswabi@yahoo.com)</p>
+    </div>
+  </div>
+  <hr>
+  <div class="application_container">
+  
+  <div>
+    <div>
+      <h4><u>Grand of Leave</u></h4>
+      <p><span class="application_note">The competent authority is pleased to transfer the following teachers on their </span>
+     own pay and BPS in the Schools noted against each in the best interest of public service with immediate effect.</p>
+    </div>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>S.No</th>
+          <th>Name & Designation</th>
+        <th>Name of School/Station</th>
+        <th>Period of Leave</th>
+        <th>Nature of Leave</th>
+        <th>Service Book Attached</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<div class="dic">
+  <div class="note_stamp">
+  <div class="noteMaindiv">
+    <div class="noteDiv">
+  <h3>Note:</h3>	<ol>
+    <li> Charge report should be submitted to all concerned.</li>
+    <li>TA/DA is not allowed. </li>
+  </ol> 
+</div>
+  
+</div>
+<div class="Stamp">
+  <h3>
+  (SOFIA TABASSUM)  <br>                                                                                       
+  District Education Officer <br>
+          (Female) Swabi
+</h3>
+</div>
+</div>
+<div>
+
+  <p>Endst: No.______________/Transfer/__________________/       Dated Swabi the _____________/2023<br>
+</div>
+<div class="Endst_stamp">
+<div class="Endst">
+
+    Copy of the above is forwarded for information to the: -<br></p>
+  <ol>
+    <li>Deputy Commissioner Swabi.  </li>
+    <li>District Accounts Officer Swabi.</li>
+    <li>District Education Monitoring Officer Swabi.  </li>
+    <li>Official concerned. </li>
+    <li id="sdeo">SDEO (F) Concerned.   </li>
+    <li id="ph">Principle/Head Mistress Concerned.   </li>
+  </ol>
+</div>
+<div class="Stamp">
+  <h3>  Deputy District Education Officer<br>
+    (Female) Swabi</h3>
+</div>
+</div>
+</div>
+  <button id="myButton" onclick="print()" >Print</button>
+</div>
+</div>
+
+
+
+ </main>
+
+  </body>
+  <script src="app.js"></script>
+
+</html>
