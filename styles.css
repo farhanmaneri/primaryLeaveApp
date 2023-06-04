@@ -30,7 +30,7 @@
       flex-wrap: wrap;
   }
   @media print {
-      .Input_container, #myButton {
+      .Input_container, #myButton,#pucButton, .puc{
         display: none;
       }
     }
@@ -73,7 +73,7 @@
       
   }
   .application_note{
-    margin-left: 21%;
+    margin-left: 15%;
   }
   
   table {
@@ -85,8 +85,28 @@
     }
     th, td {
       border: 1px solid black;
-      padding: 5px;  
-    }
+      padding: 5px; 
+ }
+
+th:nth-child(2), td:nth-child(2) {
+  width: 23%; /* Define the width for the 2nd column */
+}
+
+th:nth-child(3), td:nth-child(3) {
+  width: 22%; /* Define the width for the 3rd column */
+}
+th:nth-child(4), td:nth-child(4) {
+  width: 30%; /* Define the width for the 3rd column */
+ 
+}
+th:nth-child(5), td:nth-child(5) {
+  width: 20%; /* Define the width for the 3rd column */
+ 
+}
+th:nth-child(6), td:nth-child(6) {
+  width: 5%; /* Define the width for the 3rd column */
+ 
+}
     .noteMaindiv{
       display: flex;
       width: auto;
@@ -138,7 +158,7 @@
     height: 100px;
     /* margin: 10px 25px 5px 0px; */
   }
-  #submitButton, #myButton {
+  #submitButton, #myButton ,#pucButton{
     background-color: rgb(121, 235, 121);
     color: white;
     font-size: medium;

@@ -17,20 +17,16 @@
       <option value="Mr.">Mr.</option>
      </select>           
         <label for="name">Name:</label>
-        <input type="text" id="name" required name="name">
+        <input type="text" id="name" placeholder="Teacher name" required name="name">
         <!-- Designation -->
         <label for="designation">Designation:</label>
         <select id="designation" name="designation"  form="Mr_Ms">
        <option value="PST">PST</option>      
       <option value="PSHT">PSHT</option>
       <option value="SPST">SPST</option>
-    </select><br>
+    </select><br> 
    
-  
-   
-    <label for="school">School/Station Name:</label>
-    
-    <!-- New Station selection -->
+    <label for="school">School/Station Name:</label>    
     <select id="school" name="school"  form="school">
       <option value="GGPS">GGPS</option>      
       <option value="GGCMS">GGCMS</option>      
@@ -39,7 +35,7 @@
       <option value="GGCMHS">GGCMHS</option>      
     </select>
     <!-- New Station selection input field -->    
-    <input type="text" id="schoolInput" required name="schoolInput"><br/>
+    <input type="text" id="schoolInput" placeholder="School Name" required name="schoolInput"><br/>
     <!-- leave from date  -->
     <label for="LeavePeriod">Leave From:</label>
     <input type="date" id="dateFrom" required name="dateFrom">
@@ -55,24 +51,42 @@
           <select id="leaveNature" name="leaveNature"  form="leaveNature">
             <option value="Maternity Leave (Pre-Natal)">Maternity (Pre-Natal)</option>
             <option value="Maternity Leave (Post-Natal)">Maternity (Post-Natal)</option>
-            <option value="Earned Leave">Earned Leave</option>      
-            <option value="Marriage Leave">Marriage Leave</option>      
-            <option value="Madical Leave">Medical Leave</option>      
+            <option value="Earned Leave">Earned </option>      
+            <option value="Marriage Leave">Marriage </option>      
+            <option value="Madical Leave">Medical </option>      
           </select>
-          
+          <label for="leaveNature">Type of  Leave:</label>
+          <!-- type of leave  -->
+              <select id="leaveType" name="leaveType"  form="leaveType">
+                <option value="on full pay">on full pay</option>
+                <option value="without pay">without pay</option>
+                <option value="half pay">half pay</option>                         
+              </select>   <br>
+          <label for="tehsil">Tehsil:</label>
+          <!-- type of leave  -->
+              <select id="tehsil" name="tehsil"  form="tehsil">
+                <option value="(Tehsil Swabi)">Swabi</option>
+                <option value="(Tehsil Razzar)">Razzar</option>
+                <option value="(Tehsil Topi)">Topi</option>                         
+                <option value="(Tehsil Lahor)">Lahor</option>                         
+              </select>   
+
     <!-- Remarks -->
-    <label for="service_book">Service Book Attached:</label>
+    <label for="service_book">S/Book Attached:</label>
     <select id="service_book" name="service_book"  form="leaveNature">
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select>
     
-    <br/>
+    
     <!-- submit Button -->
     <input type="submit" id="submitButton"  value="Submit">
   </form>
 </div>
 </div>
+
+<!-- leave sanction section  -->
+
 <div class="print_section" id="print_section">
   <div class="application_header">
    <div>
@@ -89,9 +103,11 @@
   
   <div>
     <div>
-      <h4><u>Grand of Leave</u></h4>
-      <p><span class="application_note">The competent authority is pleased to transfer the following teachers on their </span>
-     own pay and BPS in the Schools noted against each in the best interest of public service with immediate effect.</p>
+      <h4><u>Leave Sanction</u></h4>
+      <p><span class="application_note"></span> Under the revised leave rules 1981, 
+        Sanction is hereby accorded to the grant of Leave 
+        in respect of the following Staff, 
+        as due and admissible to them as under: -</p>
     </div>
   <table id="dataTable">
     <thead>
@@ -101,7 +117,7 @@
         <th>Name of School/Station</th>
         <th>Period of Leave</th>
         <th>Nature of Leave</th>
-        <th>Service Book Attached</th>
+        <th>S/Book Attached</th>
       </tr>
     </thead>
     <tbody>
@@ -113,8 +129,9 @@
   <div class="noteMaindiv">
     <div class="noteDiv">
   <h3>Note:</h3>	<ol>
-    <li> Charge report should be submitted to all concerned.</li>
-    <li>TA/DA is not allowed. </li>
+   <li> Necessary entry to this effect should be made in their Service Books & Leave Account.</li>
+   <li> Conveyance Allowance of the leave period maybe recovered.</li>
+   <li> They must attend the induction program.</li>
   </ol> 
 </div>
   
@@ -129,18 +146,17 @@
 </div>
 <div>
 
-  <p>Endst: No.______________/Transfer/__________________/       Dated Swabi the _____________/2023<br>
+  <p>Endst: No.______________/Leave File/__________________/       Dated Swabi the _____________/2023<br>
 </div>
 <div class="Endst_stamp">
 <div class="Endst">
 
     Copy of the above is forwarded for information to the: -<br></p>
   <ol>
-    <li>Deputy Commissioner Swabi.  </li>
     <li>District Accounts Officer Swabi.</li>
     <li>District Education Monitoring Officer Swabi.  </li>
-    <li>Official concerned. </li>
     <li id="sdeo">SDEO (F) Concerned.   </li>
+    <li>Official concerned. </li>
     <li id="ph">Principle/Head Mistress Concerned.   </li>
   </ol>
 </div>
@@ -150,10 +166,20 @@
 </div>
 </div>
 </div>
-  <button id="myButton" onclick="print()" >Print</button>
+<div>
+  <button id="myButton" onclick="print()" >Print Sanction</button>
+    <button id="pucButton" onclick="printPuc()" >Print PUC</button>
+  </div>
 </div>
 </div>
-
+<!-- puc section  -->
+<div class="puc" id="puc">
+<div class="para">DA</div>
+<div class="para">SUPDT</div>
+<div class="para">ADEO </div>
+<div class="para">DDDO</div>
+<div class="para">DDEO</div>
+</div>
 
 
  </main>
