@@ -5,6 +5,35 @@ const print = ()=>{
   window.print()
 }
 
+// end 
+function downloadExcel() {
+  // Get the HTML content you want to convert to Excel
+  var print_section = document.getElementById("print_section").innerHTML;
+  
+  // Create a temporary link element
+  var link = document.createElement('a');
+  link.style.display = 'none';
+  
+  // Create a Blob object with the HTML content
+  var blob = new Blob([print_section], { type: 'application/vnd.ms-excel' });
+  
+  // Set the URL of the link to the Blob object
+  link.href = URL.createObjectURL(blob);
+  
+  // Set the filename of the download
+  link.download = 'data.xls';
+  
+  // Append the link to the document body
+  document.body.appendChild(link);
+  
+  // Simulate a click event on the link to trigger the download
+  link.click();
+  
+  // Remove the link from the document body
+  document.body.removeChild(link);
+}
+
+
 
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -31,7 +60,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   var teshil = document.getElementById("tehsil").value;
   var leaveType = document.getElementById("leaveType").value;
 
-  // document.getElementById('leaveTypeSpan').textContent = leaveNature;
+  // document.getElementById('leaveTypeSpan').content = leaveNature;
 
   var dateFrom = document.getElementById("dateFrom").value;
   var dateUpto = document.getElementById("dateUpto").value;

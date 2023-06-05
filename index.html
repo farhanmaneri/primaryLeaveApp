@@ -43,6 +43,7 @@
     
     <label for="LeavePeriod">Leave Upto:</label>
     <input type="date" id="dateUpto" required name="dateUpto"> <br>
+    
 
     
     <!-- Nature of leave Lable -->
@@ -81,7 +82,8 @@
     
     <!-- submit Button -->
     <input type="submit" id="submitButton"  value="Submit">
-  </form>
+     </form>
+  <button id="downloadExcel" onclick="downloadExcel()">Save as Excel</button>
 </div>
 </div>
 
@@ -170,6 +172,7 @@
 <div>
   <button id="myButton" onclick="print()" >Print Sanction</button>
     <!-- <button id="pucButton" onclick="printPuc()" >Print PUC</button> -->
+
   </div>
 </div>
 </div>
@@ -177,3 +180,4 @@
 </body>
 </html>
 <script src="app.js"></script>
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
