@@ -1,10 +1,30 @@
+
+const sanctionSection = document.getElementById('print_section')
+const pucSection = document.getElementById('puc_section')
 const print = () => {
+sanctionSection.style.display = "block";
+pucSection.style.display = "none";
+history.pushState({ developer: "sanctionSection" }, "Developer 1", "#sanctionSection");
+
   window.print();
 };
 const printPuc = ()=>{
+  sanctionSection.style.display = "none";
+pucSection.style.display = "block";
+history.pushState({ developer: "pucSection" }, "Developer 1", "#pucSection");
+
   window.print()
 }
 
+window.addEventListener("popstate", (event) => {
+  if (event.state && event.state.developer === "sanctionSection") {
+    sanctionSection.style.display = "block";
+    pucSection.style.display = "none";
+  } else {
+    sanctionSection.style.display = "none";
+    pucSection.style.display = "block";
+  }
+});
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
