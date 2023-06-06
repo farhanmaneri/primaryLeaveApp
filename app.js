@@ -32,6 +32,54 @@ function downloadExcel() {
   // Remove the link from the document body
   document.body.removeChild(link);
 }
+//  download to word
+
+function downloadWord() {
+  var htmlContent = document.getElementById("print_section").innerHTML;
+  
+  // Convert HTML to Word document
+  var convertedContent = htmlDocx.asBlob(htmlContent);
+  
+  // Create a temporary link element
+  var link = document.createElement('a');
+  link.style.display = 'none';
+  
+  // Set the URL of the link to the Blob object
+  link.href = URL.createObjectURL(convertedContent);
+  
+  // Set the filename of the download
+  link.download = 'data.docx';
+  
+  // Append the link to the document body
+  document.body.appendChild(link);
+  
+  // Simulate a click event on the link to trigger the download
+  link.click();
+  
+  // Remove the link from the document body
+  document.body.removeChild(link);
+}
+
+    // downloading to pdf 
+    function downloadPDF() {
+      var element = document.getElementById("print_section");
+      
+      // Set options for PDF generation
+      var options = {
+        
+        filename: 'data.pdf',
+        image: { type: 'jpeg', quality: 0.98 }, // Optional
+        html2canvas: { scale: 2 }, // Optional
+        
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }, // Optional
+        logging: true,  // Enable logging for troubleshooting
+        useCORS: true,
+      };
+      
+      
+      // Generate PDF from HTML content
+      html2pdf().set(options).from(element).save();
+    }
 
 
 
@@ -93,10 +141,39 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   var LeavePeriodCell = newRow.insertCell(3);
   var leaveNatureCell = newRow.insertCell(4);
   var service_bookCell = newRow.insertCell(5);
+var   edit_button = newRow.insertCell(6)
+edit_button.className = "editColumn"
+  var editButton = document.createElement('Button');
+  editButton.textContent = 'Edit';
+  editButton.className= "editButton"
+  // editButton.addEventListener('click', function() {
+  //   // Handle edit functionality here
+  //   console.log('Edit button clicked for row:', newRow.rowIndex);
+  // });
+  edit_button.appendChild(editButton);
+
+  editButton.addEventListener('click', function() {
+    var rowIndex = this.parentNode.parentNode.rowIndex; // Get the row index
+    var table = document.getElementById('dataTable');
+    var row = table.rows[rowIndex];
+    
+    // Access the cells and edit their content
+    var nameCell = row.cells[1];
+    var schoolCell = row.cells[2];
+  
+    // Example: Change the content of the first name cell
+    var newName = prompt('name:');
+    nameCell.textContent =  gender + " " +newName;
+  
+    // Example: Change the content of the last name cell
+    var newSchool = prompt('shool name:');
+    schoolCell.textContent = gender + " " + newSchool;
+  });
+  
 
   serialCell.innerHTML = rowIndex;
   nameCell.innerHTML = gender + " " + capitalizedName + "," + " " + designation;
-  schoolCell.innerHTML = school + " " + capitalizedSchool + " <br>" + teshil;
+  schoolCell.innerHTML =  gender + " " + capitalizedSchool + " <br>" + teshil;
   LeavePeriodCell.innerHTML = formatLeaveFrom +  " " +  "to" +" " +  formatLeaveUpto + " <br>" + "(" +    diffDays +    " " +    "Days)" +" " + leaveType;
   leaveNatureCell.innerHTML = leaveNature;
   service_bookCell.innerHTML = service_book;

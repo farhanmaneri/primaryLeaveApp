@@ -30,7 +30,7 @@
       flex-wrap: wrap;
   }
   @media print {
-      .Input_container, #myButton,#pucButton, .puc{
+      .Input_container, #myButton,#pucButton,.editColumn, .puc{
         display: none;
       }
     }
@@ -51,7 +51,9 @@
       border: 2px solid gainsboro;
       border-radius: 6px;
   }
-  #gender,#tehsil,#school,#service_book,#leaveType,#leaveNature, #designation, #old_station, #new_station{
+  #gender,#tehsil,#school,#service_book,
+  #leaveType,#leaveNature, #designation,
+   #old_station, #new_station{
       padding: 6px;
       margin: 4px;
       border: 2px solid gainsboro;
@@ -79,8 +81,8 @@
   table {
       border-collapse: collapse;
       border: 2px solid black;
-      border-radius: 50px;
-      margin: 6px;
+      /* border-radius: 50px; */
+      margin: 0px 2px 0px 2px;
       width: 100%;
     }
     th, td {
