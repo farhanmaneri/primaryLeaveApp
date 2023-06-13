@@ -162,13 +162,54 @@ edit_button.className = "editColumn"
     var schoolCell = row.cells[2];
   
     // Example: Change the content of the first name cell
-    var newName = prompt('name:');
-    nameCell.textContent =  gender + " " +newName;
-  
-    // Example: Change the content of the last name cell
-    var newSchool = prompt('shool name:');
-    schoolCell.textContent = gender + " " + newSchool;
+    var saveButton = row.querySelector(".save_button")
+    if(!saveButton){   
+    var newName = document.createElement('input');
+    newName.type = 'text';
+    newName.value  =  nameCell.textContent
+
+    var newSchool = document.createElement('input');
+    newSchool.type = 'text';
+    newSchool.value  =  schoolCell.textContent
+    // schoolCell.textContent = gender + " " + newSchool;
+    
+    nameCell.textContent = '';
+    nameCell.appendChild(newName);
+
+    schoolCell.textContent = '';
+    schoolCell.appendChild(newSchool);
+
+    var saveButton = document.createElement('button');
+    saveButton.textContent = 'Save';
+    saveButton.className = 'save_button'
+    saveButton.addEventListener('click', function(){
+      // Get update value from the inputs
+      var updatedNewName = newName.value;
+      var words = updatedNewName.split(" ");
+      var capitalized = words.map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      });
+      var capitalizedName = capitalized.join(" ");
+      
+      var updatedSchoolName = newSchool.value;
+      var words = updatedSchoolName.split(" ");
+      var capitalized = words.map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      });
+      var capitalizedSchool = capitalized.join(" ");
+    
+ // update the cell content with the new value
+ nameCell.textContent = capitalizedName;
+ schoolCell.textContent = capitalizedSchool;
+ 
+ editButton.disabled = false;
+ row.removeChild(saveButton)
+     })
+     row.appendChild(saveButton)
+    }
   });
+  
+// editButton.appendChild(editButton)
   
 
   serialCell.innerHTML = rowIndex;
