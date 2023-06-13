@@ -142,6 +142,19 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   var leaveNatureCell = newRow.insertCell(4);
   var service_bookCell = newRow.insertCell(5);
 var   edit_button = newRow.insertCell(6)
+// delet button
+var delete_button = newRow.insertCell(7);
+
+var deleteButton = document.createElement('button');
+deleteButton.textContent = 'Delete';
+deleteButton.addEventListener('click', function() {
+  var row = this.parentNode.parentNode;
+  table.deleteRow(row.rowIndex-1);
+});
+
+
+delete_button.appendChild(deleteButton);
+
 edit_button.className = "editColumn"
   var editButton = document.createElement('Button');
   editButton.textContent = 'Edit';
@@ -164,6 +177,7 @@ edit_button.className = "editColumn"
     // Example: Change the content of the first name cell
     var saveButton = row.querySelector(".save_button")
     if(!saveButton){   
+      
     var newName = document.createElement('input');
     newName.type = 'text';
     newName.value  =  nameCell.textContent
@@ -171,7 +185,7 @@ edit_button.className = "editColumn"
     var newSchool = document.createElement('input');
     newSchool.type = 'text';
     newSchool.value  =  schoolCell.textContent
-    // schoolCell.textContent = gender + " " + newSchool;
+   
     
     nameCell.textContent = '';
     nameCell.appendChild(newName);
@@ -185,6 +199,7 @@ edit_button.className = "editColumn"
     saveButton.addEventListener('click', function(){
       // Get update value from the inputs
       var updatedNewName = newName.value;
+      // for capitaliztion of name
       var words = updatedNewName.split(" ");
       var capitalized = words.map(function (word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
@@ -192,6 +207,7 @@ edit_button.className = "editColumn"
       var capitalizedName = capitalized.join(" ");
       
       var updatedSchoolName = newSchool.value;
+    // for capitalization of School Name
       var words = updatedSchoolName.split(" ");
       var capitalized = words.map(function (word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
@@ -199,8 +215,9 @@ edit_button.className = "editColumn"
       var capitalizedSchool = capitalized.join(" ");
     
  // update the cell content with the new value
- nameCell.textContent = capitalizedName;
- schoolCell.textContent = capitalizedSchool;
+ nameCell.textContent =  capitalizedName 
+ schoolCell.textContent =   capitalizedSchool 
+ ;
  
  editButton.disabled = false;
  row.removeChild(saveButton)
